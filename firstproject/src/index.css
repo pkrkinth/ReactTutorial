@@ -1,0 +1,27 @@
+body {
+  background-color: azure;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+  padding: 20px 20px;
+  background-color:beige;
+  color:burlywood;
+  border-radius: 20px;
+}
+
+span {
+  color: cadetblue;
+}
+
+div {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30px;
+}
