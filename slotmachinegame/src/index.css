@@ -1,0 +1,44 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: #d2dbdd;
+}
+
+.heading_style {
+  padding: 30px 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.slot_inner {
+  font-family: "Raleway" sans-serif;
+  font-size: 10px;
+  text-align: center;
+  color: #868686;
+  background-color: #fff;
+}
+
+.slotmachine {
+  padding: 0 0 50px 0;
+  box-sizing: border-box;
+  margin: auto;
+  width: 25%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
+  /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 0.1em 1em #000;
+  position: relative;
+}
+
+.matching_text {
+  font-family: "Raleway" sans-serif;
+  font-size: 10px;
+  text-align: center;
+}
