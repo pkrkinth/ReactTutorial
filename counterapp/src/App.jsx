@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 const App = () => {
+  const state = useState();
+
+  const [count, setCount] = useState(0);
+  const IncNumber = () => {
+    //   console.log("cliked");
+    setCount(count + 1);
+  };
+
   return (
     <>
-      <h1></h1>
-      <button onClick>Click Me</button>
+      <h1>{count}</h1>
+      <button onClick={IncNumber}> Click Me </button>
     </>
   );
 };
