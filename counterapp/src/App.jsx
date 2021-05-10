@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import DigitalClock from "./DigitalClock";
 
 // Hooks example: useState
 const App = () => {
@@ -23,9 +24,9 @@ const App = () => {
     <>
       <h1>{count}</h1>
       <button onClick={IncNumber}> Click Me </button>
-
       <h1>{cTime}</h1>
       <button onClick={UpdateTime}> Get Time</button>
+      <DigitalClock />
     </>
   );
 };
