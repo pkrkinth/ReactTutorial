@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+// Hooks example: useState
 const App = () => {
   const state = useState();
 
