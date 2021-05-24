@@ -154,36 +154,36 @@ const App = () => {
 
         const {value, name} = event.target;
 
-        setFullName((previosValue) => {
-            console.log(previosValue);
+        setFullName((previousValue) => {
+            console.log(previousValue);
             if (name === 'fName'){
                 return {
                 fName: value,
-                lName: previosValue.lName,
-                email: previosValue.email,
-                mobile: previosValue.mobile
+                lName: previousValue.lName,
+                email: previousValue.email,
+                mobile: previousValue.mobile
                 };
             } else if (name === 'lName'){
                 return {
-                fName: previosValue.fName,
+                fName: previousValue.fName,
                 lName: value,
-                email: previosValue.email,
-                mobile: previosValue.mobile
+                email: previousValue.email,
+                mobile: previousValue.mobile
                 };
             }
             else if (name === 'email'){
                 return {
-                fName: previosValue.fName,
-                email: previosValue.lName,
+                fName: previousValue.fName,
+                email: previousValue.lName,
                 email: value,
-                mobile: previosValue.mobile
+                mobile: previousValue.mobile
                 };
             }
             else if (name === 'mobile'){
                 return {
-                fName: previosValue.fName,
-                mobile: previosValue.lName,
-                email: previosValue.email,
+                fName: previousValue.fName,
+                mobile: previousValue.lName,
+                email: previousValue.email,
                 mobile: value
                 };
             }
