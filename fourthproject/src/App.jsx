@@ -77,6 +77,8 @@ const App = () => {
 }
 */
 
+// * Login Form with First Name and Last name * //
+/*
 const App = () => {
     const [fullName, setFullName] = useState({
         fName: "",
@@ -135,6 +137,104 @@ const App = () => {
     </>
     );
 }
+*/
 
+// * Login Form with First name, Last name, Email and Mobile no. * //
+const App = () => {
+    const [fullName, setFullName] = useState({
+        fName: "",
+        lName: "",
+        email: "",
+        mobile: "",
+    });
+    
+    const InputEvent = (event) => {
+        console.log(event.target.value);
+        // setName(event.target.value);
+
+        const {value, name} = event.target;
+
+        setFullName((previosValue) => {
+            console.log(previosValue);
+            if (name === 'fName'){
+                return {
+                fName: value,
+                lName: previosValue.lName,
+                email: previosValue.email,
+                mobile: previosValue.mobile
+                };
+            } else if (name === 'lName'){
+                return {
+                fName: previosValue.fName,
+                lName: value,
+                email: previosValue.email,
+                mobile: previosValue.mobile
+                };
+            }
+            else if (name === 'email'){
+                return {
+                fName: previosValue.fName,
+                email: previosValue.lName,
+                email: value,
+                mobile: previosValue.mobile
+                };
+            }
+            else if (name === 'mobile'){
+                return {
+                fName: previosValue.fName,
+                mobile: previosValue.lName,
+                email: previosValue.email,
+                mobile: value
+                };
+            }
+        });
+    }
+
+    const onSubmit = (event) => {
+        event.preventDefault();
+        alert("Form Submitted");
+    }
+
+    return (
+    <>
+        <div>
+            <form onSubmit={onSubmit}>
+                <div>
+                    <h1> 
+                    Hello {fullName.fName} {fullName.lName} 
+                    </h1>
+                    <p> {fullName.email} </p>
+                    <p> {fullName.mobile} </p>
+                    <input type="text" placeholder="Enter your first name"
+                        name="fName"
+                        onChange={InputEvent}
+                        value={fullName.fName}
+                    />
+                    <br/>
+                    <input type="text" placeholder="Enter your last name"
+                        name="lName"
+                        onChange={InputEvent}
+                        value={fullName.lName}
+                    />
+                    <br/>
+                    <input type="email" placeholder="Enter your email"
+                        name="email"
+                        onChange={InputEvent}
+                        value={fullName.email}
+                        autoComplete="off" // To hide the auto display of email entered
+                    />
+                    <br/>
+                    <input type="number" placeholder="Enter your mobile no."
+                        name="mobile"
+                        onChange={InputEvent}
+                        value={fullName.mobile}
+                    />
+                    <button type="submit"> Submit </button>
+                    </div>
+                </form>
+        </div>
+    </>
+    );
+}
 
 export default App;
