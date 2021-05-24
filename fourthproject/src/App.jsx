@@ -140,6 +140,7 @@ const App = () => {
 */
 
 // * Login Form with First name, Last name, Email and Mobile no. * //
+/* 
 const App = () => {
     const [fullName, setFullName] = useState({
         fName: "",
@@ -228,6 +229,87 @@ const App = () => {
                         name="mobile"
                         onChange={InputEvent}
                         value={fullName.mobile}
+                    />
+                    <button type="submit"> Submit </button>
+                    </div>
+                </form>
+        </div>
+    </>
+    );
+} 
+*/
+
+// * Login Form with First name, Last name, Email and Mobile no. and use Saperator operator * //
+const App = () => {
+    const [fullName, setFullName] = useState({
+        fName: "",
+        lName: "",
+        email: "",
+        mobile: "",
+        education: ""
+    });
+    
+    const InputEvent = (event) => {
+        console.log(event.target.value);
+        // setName(event.target.value);
+
+        const {value, name} = event.target;
+
+        setFullName((previousValue) => {
+            console.log(previousValue);
+
+            return {
+                ...previousValue,
+                [name] : value
+            }
+        });
+    }
+
+    const onSubmit = (event) => {
+        event.preventDefault();
+        alert("Form Submitted");
+    }
+
+    return (
+    <>
+        <div>
+            <form onSubmit={onSubmit}>
+                <div>
+                    <h1> 
+                    Hello {fullName.fName} {fullName.lName} 
+                    </h1>
+                    <p> {fullName.email} </p>
+                    <p> {fullName.mobile} </p>
+                    <p> {fullName.education} </p>
+                    <input type="text" placeholder="Enter your first name"
+                        name="fName"
+                        onChange={InputEvent}
+                        value={fullName.fName}
+                    />
+                    <br/>
+                    <input type="text" placeholder="Enter your last name"
+                        name="lName"
+                        onChange={InputEvent}
+                        value={fullName.lName}
+                    />
+                    <br/>
+                    <input type="email" placeholder="Enter your email"
+                        name="email"
+                        onChange={InputEvent}
+                        value={fullName.email}
+                        autoComplete="off" // To hide the auto display of email entered
+                    />
+                    <br/>
+                    <input type="number" placeholder="Enter your mobile no."
+                        name="mobile"
+                        onChange={InputEvent}
+                        value={fullName.mobile}
+                    />
+                    <br/>
+                    <input type="education" placeholder="Enter your education"
+                        name="education"
+                        onChange={InputEvent}
+                        value={fullName.education}
                     />
                     <button type="submit"> Submit </button>
                     </div>
